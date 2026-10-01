@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — adatvédelmi irányelvek</title>
-<meta name="description" content="A Lunette a helyzetedet a Maceden tartja, és nincs hálózati hozzáférése. A teljes adatvédelmi irányelvek.">
+<meta name="description" content="A Lunette a helyzetedet az eszközödön tartja, és nincs hálózati hozzáférése. A teljes adatvédelmi irányelvek.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Kezdőlap</a>
     <a href="support.html">Támogatás</a>
     <a href="privacy.html">Adatvédelmi irányelvek</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">E-mail a támogatásnak</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">E-mail a támogatásnak</a>
     <!-- family:nav --><a href="./#more-apps">További appok</a>
   <details class="family-lang"><summary aria-label="Nyelv: Magyar"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Magyar</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Ez a fordítás a kényelmedet szolgálja; az <a href="../privacy.html">angol nyelvű adatvédelmi irányelvek</a> a mérvadó változat. Utolsó frissítés: 2026. szeptember 25.</p>
+  <p class="note">Ez a fordítás a kényelmedet szolgálja; az <a href="../privacy.html">angol nyelvű adatvédelmi irányelvek</a> a mérvadó változat. Utolsó frissítés: 2026. október 1.</p>
   <h2>Röviden</h2>
-  <p>A Lunette a helyzetedet arra használja, hogy kiszámolja a Nap és a Hold időpontjait ott, ahol vagy. A helyzet a Maceden marad. Az appnak nincs hálózati hozzáférése, semmit nem gyűjt és semmit nem küld.</p>
+  <p>A Lunette a helyzetedet arra használja, hogy kiszámolja a Nap és a Hold időpontjait ott, ahol vagy. A helyzet az eszközödön marad. Az appnak nincs hálózati hozzáférése, semmit nem gyűjt és semmit nem küld.</p>
 </section>
 
 <section class="card">
   <h2>A helyzeted</h2>
-  <p>A macOS engedélyt kér tőled, mielőtt a Lunette használhatná a helyzetedet. Ha megengeded, a Lunette induláskor, majd néhány óránként lekérdezi a helyzetedet a Helymeghatározástól — soha nem követ folyamatosan —, és tárolás előtt két tizedesjegyre, nagyjából egy kilométerre kerekíti. Ezt a kerekített helyzetet egyetlen dologra használja: a napkelte, a napnyugta, a szürkület, az aranyóra, a holdkelte és a holdnyugta kiszámítására.</p>
-  <p>A településed neve, ha a macOS meg tudja adni, megjelenik a panelen, és a helyzettel együtt tárolódik.</p>
-  <p>Ha elutasítod, vagy kikapcsolod a Helymeghatározást, a Lunette helyette a Maced időzónájának fő városát használja. A Hold fázisa mindenhol ugyanaz, és egyáltalán nem kell hozzá helyzet.</p>
+  <p>A rendszered engedélyt kér tőled, mielőtt a Lunette használhatná a helyzetedet; Androidon a Lunette előbb elmondja, miért, majd csak a hozzávetőleges helyzetedet kéri. Ha megengeded, a Lunette induláskor vagy amikor újra a képernyőre kerül, majd futás közben néhány óránként lekérdezi a helyzetedet — soha nem követ folyamatosan vagy a háttérben —, és tárolás előtt két tizedesjegyre, nagyjából egy kilométerre kerekíti. Ezt a kerekített helyzetet egyetlen dologra használja: a napkelte, a napnyugta, a szürkület, az aranyóra, a holdkelte és a holdnyugta kiszámítására.</p>
+  <p>A településed neve, ha a rendszer meg tudja adni, megjelenik az appban. Macen a helyzettel együtt tárolódik; iPhone-on, iPaden és Androidon minden alkalommal újra lekérdeződik, és nem tárolódik.</p>
+  <p>Ha elutasítod, vagy kikapcsolod a helymeghatározást, a Lunette helyette az eszközöd időzónájának fő városát használja. A Hold fázisa mindenhol ugyanaz, és egyáltalán nem kell hozzá helyzet.</p>
+  <p>Widgetek: Macen a Lunette widgetjei egy App Groupon keresztül kapják meg a kerekített helyzetet az apptól; ez egy olyan terület a Maceden, amelyet csak a Lunette és a widgetjei olvashatnak. iPhone-on és iPaden a widgetek maguk kérik a helyzetedet a rendszertől, csak ha engedélyezted a Lunette-nek, és ugyanígy kerekítik. Androidon a widgetek az app által tárolt helyzetet olvassák.</p>
 </section>
 
 <section class="card">
   <h2>Hová kerül</h2>
-  <p>Sehová. <strong>A Lunette nem rendelkezik hálózati jogosultsággal</strong>, vagyis maga a macOS nem engedi, hogy hálózati kapcsolatot nyisson. Nincs szerver, nincs analitikai könyvtár, nincs hibajelentő és nincs fiók.</p>
+  <p>Sehová. <strong>A Lunette-nek nincs hálózati hozzáférése.</strong> Macen nem rendelkezik hálózati jogosultsággal, Androidon pedig nem kér internetengedélyt, így maga a rendszer nem enged kapcsolatot nyitni; az iPhone-os és iPades appban nincs olyan kód, amely a hálózatot használná. Nincs szerver, nincs analitikai könyvtár, nincs hibajelentő és nincs fiók.</p>
 </section>
 
 <section class="card">
   <h2>Mit tárol, és hol</h2>
-  <p>Az app saját sandbox-tárolójában a Maceden: a fent leírt kerekített helyzetet és helynevet, valamint a megjelenítési beállításaidat. Semmi mást. Az app törlésével a tároló és minden, ami benne van, eltűnik.</p>
+  <p>Az app saját tárhelyén az eszközödön: a fent leírt kerekített helyzet (és Macen a helynév), valamint a megjelenítési beállításaid. Semmi más. Az app törlésével minden eltűnik. Mint bármely app adatai, ezek is bekerülnek az eszközödről készült saját biztonsági mentéseidbe, kivéve Androidon, ahol a helyzet kimarad belőlük.</p>
 </section>
 
 <section class="card">
   <h2>E-mail</h2>
-  <p>Az <em>E-mail a fejlesztőnek</em> gomb a saját levelezőappodban nyit meg egy üzenetet, amelyben már ki van töltve az app verziója, a macOS-verziód, a Maced típusa és az, hogy a Lunette hogyan találta meg a helyzetedet (például „Helymeghatározás” vagy „az időzóna városa”). A helyzeted nincs benne. Semmi sem megy el, hacsak te magad el nem küldöd az üzenetet.</p>
+  <p>Az <em>E-mail a fejlesztőnek</em> gomb a saját levelezőappodban nyit meg egy üzenetet, amelyben már ki van töltve az app verziója, a rendszerverziód, az eszközöd típusa és az, hogy a Lunette hogyan találta meg a helyzetedet (például „Helymeghatározás” vagy „az időzóna városa”). A helyzeted nincs benne. Semmi sem megy el, hacsak te magad el nem küldöd az üzenetet.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Kapcsolat</h2>
-  <p>Kérdések ezekről az irányelvekről vagy bármi másról: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Kérdések ezekről az irányelvekről vagy bármi másról: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette macOS-re · <a href="./">Kezdőlap</a> · <a href="support.html">Támogatás</a> · <a href="privacy.html">Adatvédelem</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette Macre, iPhone-ra, iPadre és Androidra · <a href="./">Kezdőlap</a> · <a href="support.html">Támogatás</a> · <a href="privacy.html">Adatvédelem</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

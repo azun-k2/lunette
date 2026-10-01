@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — política de privacidad</title>
-<meta name="description" content="Lunette guarda tu ubicación en tu Mac y no tiene acceso a la red. La política de privacidad completa.">
+<meta name="description" content="Lunette guarda tu ubicación en tu dispositivo y no tiene acceso a la red. La política de privacidad completa.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Inicio</a>
     <a href="support.html">Soporte</a>
     <a href="privacy.html">Política de privacidad</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Escribir a soporte</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Escribir a soporte</a>
     <!-- family:nav --><a href="./#more-apps">Más apps</a>
   <details class="family-lang"><summary aria-label="Idioma: Español"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Español</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Esta traducción se ofrece por comodidad; la <a href="../privacy.html">política de privacidad en inglés</a> es la versión que prevalece. Última actualización: 25 de septiembre de 2026.</p>
+  <p class="note">Esta traducción se ofrece por comodidad; la <a href="../privacy.html">política de privacidad en inglés</a> es la versión que prevalece. Última actualización: 1 de octubre de 2026.</p>
   <h2>En resumen</h2>
-  <p>Lunette usa tu ubicación para calcular las horas del Sol y de la Luna donde estás. La ubicación se queda en tu Mac. La app no tiene acceso a la red, no recopila nada y no envía nada.</p>
+  <p>Lunette usa tu ubicación para calcular las horas del Sol y de la Luna donde estás. La ubicación se queda en tu dispositivo. La app no tiene acceso a la red, no recopila nada y no envía nada.</p>
 </section>
 
 <section class="card">
   <h2>Tu ubicación</h2>
-  <p>macOS te pide permiso antes de que Lunette pueda usar tu ubicación. Si lo das, Lunette pide tu posición a Localización al abrirse y después cada pocas horas —nunca te sigue de forma continua— y la redondea a dos decimales, aproximadamente un kilómetro, antes de guardarla. Esa posición redondeada se usa para una sola cosa: calcular el amanecer, el atardecer, el crepúsculo, la hora dorada y la salida y puesta de la Luna.</p>
-  <p>El nombre de tu localidad, cuando macOS puede proporcionarlo, se muestra en el panel y se guarda junto a la posición.</p>
-  <p>Si lo rechazas, o desactivas Localización, Lunette usa en su lugar la ciudad principal de la zona horaria de tu Mac. La fase de la Luna es la misma en todas partes y no necesita ninguna ubicación.</p>
+  <p>Tu sistema te pide permiso antes de que Lunette pueda usar tu ubicación; en Android, Lunette te explica primero para qué la necesita y luego solo pide tu ubicación aproximada. Si das permiso, Lunette pide tu posición al abrirse o al volver a la pantalla, y cada pocas horas mientras está en marcha —nunca te sigue de forma continua ni en segundo plano— y la redondea a dos decimales, aproximadamente un kilómetro, antes de guardarla. Esa posición redondeada se usa para una sola cosa: calcular el amanecer, el atardecer, el crepúsculo, la hora dorada y la salida y puesta de la Luna.</p>
+  <p>El nombre de tu localidad, cuando el sistema puede proporcionarlo, se muestra en la app. En el Mac se guarda junto a la posición; en iPhone, iPad y Android se vuelve a buscar cada vez y no se guarda.</p>
+  <p>Si lo rechazas, o desactivas la ubicación, Lunette usa en su lugar la ciudad principal de la zona horaria de tu dispositivo. La fase de la Luna es la misma en todas partes y no necesita ninguna ubicación.</p>
+  <p>Widgets: en el Mac, los widgets de Lunette reciben la posición redondeada de la app a través de un App Group, un espacio de tu Mac que solo pueden leer Lunette y sus widgets. En iPhone y iPad, los widgets piden ellos mismos tu ubicación al sistema, solo si has dado permiso a Lunette, y la redondean igual. En Android, los widgets leen la posición que ha guardado la app.</p>
 </section>
 
 <section class="card">
   <h2>Adónde va</h2>
-  <p>A ninguna parte. <strong>Lunette no tiene el permiso de red</strong>, lo que significa que el propio macOS no le deja abrir una conexión de red. No hay servidor, ni biblioteca de análisis, ni informes de fallos, ni cuenta.</p>
+  <p>A ninguna parte. <strong>Lunette no tiene acceso a la red.</strong> En el Mac no tiene el permiso de red y en Android no pide el permiso de Internet, así que el propio sistema no le deja abrir ninguna conexión; la app de iPhone y iPad no contiene código que use la red. No hay servidor, ni biblioteca de análisis, ni informes de fallos, ni cuenta.</p>
 </section>
 
 <section class="card">
   <h2>Qué se guarda y dónde</h2>
-  <p>Dentro del contenedor aislado (sandbox) de la propia app, en tu Mac: la posición redondeada y el nombre del lugar descritos arriba, y tus ajustes de visualización. Nada más. Al eliminar la app se borra su contenedor con todo lo que contiene.</p>
+  <p>Dentro del almacenamiento propio de la app, en tu dispositivo: la posición redondeada (y en el Mac el nombre del lugar) descritos arriba, y tus ajustes de visualización. Nada más. Al eliminar la app se borra todo. Como los datos de cualquier app, se incluye en tus propias copias de seguridad del dispositivo, salvo en Android, donde la posición queda fuera de ellas.</p>
 </section>
 
 <section class="card">
   <h2>Correo electrónico</h2>
-  <p>El botón <em>Escribir al desarrollador</em> abre un mensaje en tu propia app de correo con la versión de la app, tu versión de macOS, el tipo de Mac y cómo encontró Lunette tu ubicación (por ejemplo, «Localización» o «ciudad de la zona horaria») ya rellenados. No incluye tu posición. No se envía nada a menos que tú mismo envíes el mensaje.</p>
+  <p>El botón <em>Escribir al desarrollador</em> abre un mensaje en tu propia app de correo con la versión de la app, tu versión del sistema, el tipo de dispositivo y cómo encontró Lunette tu ubicación (por ejemplo, «Localización» o «ciudad de la zona horaria») ya rellenados. No incluye tu posición. No se envía nada a menos que tú mismo envíes el mensaje.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Contacto</h2>
-  <p>Preguntas sobre esta política, o sobre cualquier otra cosa: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Preguntas sobre esta política, o sobre cualquier otra cosa: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette para macOS · <a href="./">Inicio</a> · <a href="support.html">Soporte</a> · <a href="privacy.html">Privacidad</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette para Mac, iPhone, iPad y Android · <a href="./">Inicio</a> · <a href="support.html">Soporte</a> · <a href="privacy.html">Privacidad</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

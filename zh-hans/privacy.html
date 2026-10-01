@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — 隐私政策</title>
-<meta name="description" content="Lunette 把你的位置留在你的 Mac 上，并且没有网络访问权限。完整隐私政策。">
+<meta name="description" content="Lunette 把你的位置留在你的设备上，并且没有网络访问权限。完整隐私政策。">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">首页</a>
     <a href="support.html">支持</a>
     <a href="privacy.html">隐私政策</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">发邮件联系支持</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">发邮件联系支持</a>
     <!-- family:nav --><a href="./#more-apps">更多应用</a>
   <details class="family-lang"><summary aria-label="语言: 简体中文"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>简体中文</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">本译文仅为方便阅读而提供，以<a href="../privacy.html">英文版隐私政策</a>为准。 最后更新：2026 年 9 月 25 日。</p>
+  <p class="note">本译文仅为方便阅读而提供，以<a href="../privacy.html">英文版隐私政策</a>为准。 最后更新：2026 年 10 月 1 日。</p>
   <h2>简而言之</h2>
-  <p>Lunette 使用你的位置来计算你所在之处的太阳和月亮时间。位置留在你的 Mac 上。这款 App 没有网络访问权限，不收集任何东西，也不发送任何东西。</p>
+  <p>Lunette 使用你的位置来计算你所在之处的太阳和月亮时间。位置留在你的设备上。这款 App 没有网络访问权限，不收集任何东西，也不发送任何东西。</p>
 </section>
 
 <section class="card">
   <h2>你的位置</h2>
-  <p>在 Lunette 使用你的位置之前，macOS 会先征求你的许可。如果你允许，Lunette 会在启动时以及之后每隔几小时向定位服务获取一次你的位置——它从不持续跟踪你——并在保存前将其舍入到小数点后两位，约一公里。这个舍入后的位置只用于一件事：计算日出、日落、晨昏蒙影、黄金时刻、月出和月落。</p>
-  <p>如果 macOS 能提供你所在地的名称，它会显示在面板中，并与位置一起保存。</p>
-  <p>如果你拒绝或关闭定位服务，Lunette 会改用你 Mac 所在时区的主要城市。月相在哪里都一样，完全不需要位置。</p>
+  <p>在 Lunette 使用你的位置之前，系统会先征求你的许可；在 Android 上，Lunette 会先说明原因，然后只请求你的大致位置。如果你允许，Lunette 会在启动或回到屏幕时，以及运行期间每隔几小时获取一次你的位置——它从不持续或在后台跟踪你——并在保存前将其舍入到小数点后两位，约一公里。这个舍入后的位置只用于一件事：计算日出、日落、晨昏蒙影、黄金时刻、月出和月落。</p>
+  <p>如果系统能提供你所在地的名称，它会显示在 App 中。在 Mac 上，地名与位置一起保存；在 iPhone、iPad 和 Android 上，每次都会重新查询，不会保存。</p>
+  <p>如果你拒绝或关闭定位，Lunette 会改用你设备所在时区的主要城市。月相在哪里都一样，完全不需要位置。</p>
+  <p>小组件：在 Mac 上，Lunette 的小组件通过 App Group 从 App 获取舍入后的位置；App Group 是你 Mac 上只有 Lunette 及其小组件才能读取的空间。在 iPhone 和 iPad 上，只有在你允许 Lunette 使用位置时，小组件才会自行向系统获取位置，并以同样的方式舍入。在 Android 上，小组件读取 App 已保存的位置。</p>
 </section>
 
 <section class="card">
   <h2>信息去向</h2>
-  <p>哪儿也不去。<strong>Lunette 没有网络权限</strong>，这意味着 macOS 本身就不允许它建立网络连接。没有服务器，没有分析库，没有崩溃报告工具，也没有账户。</p>
+  <p>哪儿也不去。<strong>Lunette 没有网络访问权限。</strong>在 Mac 上它没有网络权限，在 Android 上它不请求互联网权限，因此系统本身就不允许它建立连接；iPhone 和 iPad 版 App 中没有任何使用网络的代码。没有服务器，没有分析库，没有崩溃报告工具，也没有账户。</p>
 </section>
 
 <section class="card">
   <h2>保存什么、保存在哪里</h2>
-  <p>保存在你 Mac 上这款 App 自己的沙盒容器中：上面提到的舍入后的位置和地名，以及你的显示设置。除此之外别无他物。删除 App 会移除它的容器及其中的一切。</p>
+  <p>保存在你设备上这款 App 自己的存储空间中：上面提到的舍入后的位置（在 Mac 上还有地名），以及你的显示设置。除此之外别无他物。删除 App 即会移除这一切。和任何 App 的数据一样，它们包含在你对设备所做的备份中；只有在 Android 上，位置不会被备份。</p>
 </section>
 
 <section class="card">
   <h2>邮件</h2>
-  <p><em>给开发者发邮件</em>按钮会在你自己的邮件 App 中打开一封邮件，其中已填好 App 版本、你的 macOS 版本、Mac 的类型，以及 Lunette 获取你位置的方式（例如“定位服务”或“时区城市”）。邮件中不包含你的位置。除非你自己发送这封邮件，否则什么都不会发出。</p>
+  <p><em>给开发者发邮件</em>按钮会在你自己的邮件 App 中打开一封邮件，其中已填好 App 版本、你的系统版本、设备类型，以及 Lunette 获取你位置的方式（例如“定位服务”或“时区城市”）。邮件中不包含你的位置。除非你自己发送这封邮件，否则什么都不会发出。</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>联系方式</h2>
-  <p>关于本政策或其他任何问题，请发邮件至 <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>。</p>
+  <p>关于本政策或其他任何问题，请发邮件至 <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>。</p>
 </section>
 
 <footer>
-<p>Lunette macOS 版 · <a href="./">首页</a> · <a href="support.html">支持</a> · <a href="privacy.html">隐私</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette Mac、iPhone、iPad 与 Android 版 · <a href="./">首页</a> · <a href="support.html">支持</a> · <a href="privacy.html">隐私</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

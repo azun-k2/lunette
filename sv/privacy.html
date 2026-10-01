@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — integritetspolicy</title>
-<meta name="description" content="Lunette håller din plats på din Mac och har ingen nätverksåtkomst. Den fullständiga integritetspolicyn.">
+<meta name="description" content="Lunette håller din plats på din enhet och har ingen nätverksåtkomst. Den fullständiga integritetspolicyn.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Start</a>
     <a href="support.html">Support</a>
     <a href="privacy.html">Integritetspolicy</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Mejla support</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Mejla support</a>
     <!-- family:nav --><a href="./#more-apps">Fler appar</a>
   <details class="family-lang"><summary aria-label="Språk: Svenska"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Svenska</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Den här översättningen finns för enkelhetens skull; den <a href="../privacy.html">engelska integritetspolicyn</a> är den gällande versionen. Senast uppdaterad 25 september 2026.</p>
+  <p class="note">Den här översättningen finns för enkelhetens skull; den <a href="../privacy.html">engelska integritetspolicyn</a> är den gällande versionen. Senast uppdaterad 1 oktober 2026.</p>
   <h2>Den korta versionen</h2>
-  <p>Lunette använder din plats för att räkna ut solens och månens tider där du är. Platsen stannar på din Mac. Appen har ingen nätverksåtkomst, samlar inte in något och skickar inget.</p>
+  <p>Lunette använder din plats för att räkna ut solens och månens tider där du är. Platsen stannar på din enhet. Appen har ingen nätverksåtkomst, samlar inte in något och skickar inget.</p>
 </section>
 
 <section class="card">
   <h2>Din plats</h2>
-  <p>macOS ber om ditt tillstånd innan Lunette får använda din plats. Om du tillåter det frågar Lunette Platstjänster om din position när den startar och sedan med några timmars mellanrum — den spårar dig aldrig kontinuerligt — och avrundar den till två decimaler, ungefär en kilometer, innan den sparas. Den avrundade positionen används till en sak: att räkna ut soluppgång, solnedgång, skymning, gyllene timmen, månuppgång och månnedgång.</p>
-  <p>Namnet på din ort visas, när macOS kan ange ett, i panelen och sparas tillsammans med positionen.</p>
-  <p>Om du tackar nej, eller stänger av Platstjänster, använder Lunette i stället huvudstaden i din Macs tidszon. Månens fas är densamma överallt och behöver ingen plats alls.</p>
+  <p>Ditt system ber om ditt tillstånd innan Lunette får använda din plats; på Android förklarar Lunette först varför och ber sedan bara om din ungefärliga plats. Om du tillåter det frågar Lunette efter din position när appen startar eller kommer fram på skärmen igen, och med några timmars mellanrum medan den körs — den spårar dig aldrig kontinuerligt eller i bakgrunden — och avrundar den till två decimaler, ungefär en kilometer, innan den sparas. Den avrundade positionen används till en sak: att räkna ut soluppgång, solnedgång, skymning, gyllene timmen, månuppgång och månnedgång.</p>
+  <p>Namnet på din ort visas, när systemet kan ange ett, i appen. På Mac sparas det tillsammans med positionen; på iPhone, iPad och Android slås det upp på nytt varje gång och sparas inte.</p>
+  <p>Om du tackar nej, eller stänger av plats, använder Lunette i stället huvudstaden i din enhets tidszon. Månens fas är densamma överallt och behöver ingen plats alls.</p>
+  <p>Widgetar: På Mac får Lunettes widgetar den avrundade positionen från appen via en App Group, ett utrymme på din Mac som bara Lunette och dess widgetar kan läsa. På iPhone och iPad ber widgetarna själva systemet om din plats, bara om du har tillåtit Lunette, och avrundar den på samma sätt. På Android läser widgetarna den position som appen har sparat.</p>
 </section>
 
 <section class="card">
   <h2>Vart den tar vägen</h2>
-  <p>Ingenstans. <strong>Lunette har ingen nätverksbehörighet</strong>, vilket betyder att macOS självt inte låter den öppna en nätverksanslutning. Det finns ingen server, inget analysbibliotek, ingen kraschrapportering och inget konto.</p>
+  <p>Ingenstans. <strong>Lunette har ingen nätverksåtkomst.</strong> På Mac har den ingen nätverksbehörighet och på Android ber den inte om internetbehörigheten, så systemet självt tillåter ingen anslutning; appen för iPhone och iPad innehåller ingen kod som använder nätverket. Det finns ingen server, inget analysbibliotek, ingen kraschrapportering och inget konto.</p>
 </section>
 
 <section class="card">
   <h2>Vad som sparas, och var</h2>
-  <p>I appens egen sandlådebehållare på din Mac: den avrundade positionen och ortnamnet som beskrivs ovan, och dina visningsinställningar. Inget annat. Om du raderar appen tas behållaren bort med allt i den.</p>
+  <p>I appens egen lagring på din enhet: den avrundade positionen (och på Mac ortnamnet) som beskrivs ovan, och dina visningsinställningar. Inget annat. Om du raderar appen tas allt bort. Som alla appars data ingår det i dina egna säkerhetskopior av enheten, utom på Android, där positionen hålls utanför dem.</p>
 </section>
 
 <section class="card">
   <h2>Mejl</h2>
-  <p>Knappen <em>Mejla utvecklaren</em> öppnar ett meddelande i ditt eget mejlprogram med appversionen, din macOS-version, vilken sorts Mac du har och hur Lunette hittade din plats (till exempel ”Platstjänster” eller ”stad i tidszonen”) redan ifyllda. Din position finns inte med. Inget skickas om du inte skickar meddelandet själv.</p>
+  <p>Knappen <em>Mejla utvecklaren</em> öppnar ett meddelande i ditt eget mejlprogram med appversionen, din systemversion, vilken sorts enhet du har och hur Lunette hittade din plats (till exempel ”Platstjänster” eller ”stad i tidszonen”) redan ifyllda. Din position finns inte med. Inget skickas om du inte skickar meddelandet själv.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Kontakt</h2>
-  <p>Frågor om policyn, eller om något annat: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Frågor om policyn, eller om något annat: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette för macOS · <a href="./">Start</a> · <a href="support.html">Support</a> · <a href="privacy.html">Integritet</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette för Mac, iPhone, iPad och Android · <a href="./">Start</a> · <a href="support.html">Support</a> · <a href="privacy.html">Integritet</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

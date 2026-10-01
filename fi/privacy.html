@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — tietosuojakäytäntö</title>
-<meta name="description" content="Lunette pitää sijaintisi Macillasi, eikä sillä ole verkkoyhteyttä. Koko tietosuojakäytäntö.">
+<meta name="description" content="Lunette pitää sijaintisi laitteellasi, eikä sillä ole verkkoyhteyttä. Koko tietosuojakäytäntö.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Etusivu</a>
     <a href="support.html">Tuki</a>
     <a href="privacy.html">Tietosuojakäytäntö</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Lähetä sähköpostia tukeen</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Lähetä sähköpostia tukeen</a>
     <!-- family:nav --><a href="./#more-apps">Lisää appeja</a>
   <details class="family-lang"><summary aria-label="Kieli: Suomi"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Suomi</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Tämä käännös on tarkoitettu avuksi; <a href="../privacy.html">englanninkielinen tietosuojakäytäntö</a> on sitova versio. Päivitetty viimeksi 25. syyskuuta 2026.</p>
+  <p class="note">Tämä käännös on tarkoitettu avuksi; <a href="../privacy.html">englanninkielinen tietosuojakäytäntö</a> on sitova versio. Päivitetty viimeksi 1. lokakuuta 2026.</p>
   <h2>Lyhyesti</h2>
-  <p>Lunette käyttää sijaintiasi laskeakseen Auringon ja Kuun ajat siellä, missä olet. Sijainti pysyy Macillasi. Apilla ei ole verkkoyhteyttä, se ei kerää mitään eikä lähetä mitään.</p>
+  <p>Lunette käyttää sijaintiasi laskeakseen Auringon ja Kuun ajat siellä, missä olet. Sijainti pysyy laitteellasi. Apilla ei ole verkkoyhteyttä, se ei kerää mitään eikä lähetä mitään.</p>
 </section>
 
 <section class="card">
   <h2>Sijaintisi</h2>
-  <p>macOS pyytää lupaasi ennen kuin Lunette saa käyttää sijaintiasi. Jos sallit sen, Lunette kysyy sijaintiasi Sijaintipalveluilta käynnistyessään ja sen jälkeen muutaman tunnin välein — se ei koskaan seuraa sinua jatkuvasti — ja pyöristää sen kahteen desimaaliin, noin kilometriin, ennen kuin tallentaa sen. Pyöristettyä sijaintia käytetään yhteen asiaan: auringonnousun, auringonlaskun, hämärän, kultaisen tunnin, kuunnousun ja kuunlaskun laskemiseen.</p>
-  <p>Paikkakuntasi nimi näytetään paneelissa, kun macOS pystyy sen antamaan, ja se tallennetaan sijainnin yhteyteen.</p>
-  <p>Jos kieltäydyt tai laitat Sijaintipalvelut pois päältä, Lunette käyttää sen sijaan Macisi aikavyöhykkeen pääkaupunkia. Kuun vaihe on sama kaikkialla eikä tarvitse sijaintia lainkaan.</p>
+  <p>Järjestelmäsi pyytää lupaasi ennen kuin Lunette saa käyttää sijaintiasi; Androidilla Lunette kertoo ensin miksi ja pyytää sitten vain likimääräistä sijaintiasi. Jos sallit sen, Lunette kysyy sijaintiasi käynnistyessään tai palatessaan näytölle sekä muutaman tunnin välein sen ollessa käynnissä — se ei koskaan seuraa sinua jatkuvasti eikä taustalla — ja pyöristää sen kahteen desimaaliin, noin kilometriin, ennen kuin tallentaa sen. Pyöristettyä sijaintia käytetään yhteen asiaan: auringonnousun, auringonlaskun, hämärän, kultaisen tunnin, kuunnousun ja kuunlaskun laskemiseen.</p>
+  <p>Paikkakuntasi nimi näytetään apissa, kun järjestelmä pystyy sen antamaan. Macilla se tallennetaan sijainnin yhteyteen; iPhonella, iPadilla ja Androidilla se haetaan joka kerta uudelleen eikä sitä tallenneta.</p>
+  <p>Jos kieltäydyt tai laitat sijainnin pois päältä, Lunette käyttää sen sijaan laitteesi aikavyöhykkeen pääkaupunkia. Kuun vaihe on sama kaikkialla eikä tarvitse sijaintia lainkaan.</p>
+  <p>Widgetit: Macilla Lunetten widgetit saavat pyöristetyn sijainnin apilta App Groupin kautta, joka on Macisi tila, jota vain Lunette ja sen widgetit voivat lukea. iPhonella ja iPadilla widgetit kysyvät sijaintiasi järjestelmältä itse, vain jos olet sallinut sen Lunettelle, ja pyöristävät sen samalla tavalla. Androidilla widgetit lukevat sijainnin, jonka appi on tallentanut.</p>
 </section>
 
 <section class="card">
   <h2>Minne tiedot menevät</h2>
-  <p>Ei minnekään. <strong>Lunettella ei ole verkko-oikeutta</strong>, mikä tarkoittaa, että macOS itse ei anna sen avata verkkoyhteyttä. Palvelinta, analytiikkakirjastoa, kaatumisraportointia tai tiliä ei ole.</p>
+  <p>Ei minnekään. <strong>Lunettella ei ole verkkoyhteyttä.</strong> Macilla sillä ei ole verkko-oikeutta eikä se Androidilla pyydä internet-lupaa, joten järjestelmä itse ei salli yhteyttä; iPhonen ja iPadin apissa ei ole verkkoa käyttävää koodia. Palvelinta, analytiikkakirjastoa, kaatumisraportointia tai tiliä ei ole.</p>
 </section>
 
 <section class="card">
   <h2>Mitä tallennetaan ja minne</h2>
-  <p>Apin omaan hiekkalaatikkosäilöön Macillasi: edellä kuvattu pyöristetty sijainti ja paikan nimi sekä näyttöasetuksesi. Ei mitään muuta. Kun poistat apin, sen säilö ja kaikki sen sisältö poistuvat.</p>
+  <p>Apin omaan tallennustilaan laitteellasi: edellä kuvattu pyöristetty sijainti (ja Macilla paikan nimi) sekä näyttöasetuksesi. Ei mitään muuta. Kun poistat apin, kaikki poistuu. Kuten minkä tahansa apin tiedot, ne sisältyvät omiin laitteesi varmuuskopioihin, paitsi Androidilla, jossa sijainti jätetään niiden ulkopuolelle.</p>
 </section>
 
 <section class="card">
   <h2>Sähköposti</h2>
-  <p><em>Lähetä sähköpostia kehittäjälle</em> -painike avaa omassa sähköpostiapissasi viestin, johon on valmiiksi täytetty apin versio, macOS-versiosi, Macisi tyyppi ja se, miten Lunette löysi sijaintisi (esimerkiksi ”Sijaintipalvelut” tai ”aikavyöhykkeen kaupunki”). Sijaintisi ei ole mukana. Mitään ei lähetetä, ellet lähetä viestiä itse.</p>
+  <p><em>Lähetä sähköpostia kehittäjälle</em> -painike avaa omassa sähköpostiapissasi viestin, johon on valmiiksi täytetty apin versio, järjestelmäversiosi, laitteesi tyyppi ja se, miten Lunette löysi sijaintisi (esimerkiksi ”Sijaintipalvelut” tai ”aikavyöhykkeen kaupunki”). Sijaintisi ei ole mukana. Mitään ei lähetetä, ellet lähetä viestiä itse.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Yhteystiedot</h2>
-  <p>Kysymykset tästä käytännöstä tai mistä tahansa muusta: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Kysymykset tästä käytännöstä tai mistä tahansa muusta: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette macOS:lle · <a href="./">Etusivu</a> · <a href="support.html">Tuki</a> · <a href="privacy.html">Tietosuoja</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette Macille, iPhonelle, iPadille ja Androidille · <a href="./">Etusivu</a> · <a href="support.html">Tuki</a> · <a href="privacy.html">Tietosuoja</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

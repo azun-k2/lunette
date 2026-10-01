@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — dasar privasi</title>
-<meta name="description" content="Lunette menyimpan lokasi anda pada Mac anda dan tiada akses rangkaian. Dasar privasi penuh.">
+<meta name="description" content="Lunette menyimpan lokasi anda pada peranti anda dan tiada akses rangkaian. Dasar privasi penuh.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Laman utama</a>
     <a href="support.html">Sokongan</a>
     <a href="privacy.html">Dasar privasi</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">E-mel sokongan</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">E-mel sokongan</a>
     <!-- family:nav --><a href="./#more-apps">Lagi app</a>
   <details class="family-lang"><summary aria-label="Bahasa: Bahasa Melayu"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Bahasa Melayu</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Terjemahan ini disediakan untuk kemudahan; versi yang sah ialah <a href="../privacy.html">dasar privasi dalam bahasa Inggeris</a>. Kemas kini terakhir pada 25 September 2026.</p>
+  <p class="note">Terjemahan ini disediakan untuk kemudahan; versi yang sah ialah <a href="../privacy.html">dasar privasi dalam bahasa Inggeris</a>. Kemas kini terakhir pada 1 Oktober 2026.</p>
   <h2>Ringkasnya</h2>
-  <p>Lunette menggunakan lokasi anda untuk mengira waktu Matahari dan Bulan di tempat anda berada. Lokasi itu kekal pada Mac anda. Apl ini tiada akses rangkaian, tidak mengumpul apa-apa dan tidak menghantar apa-apa.</p>
+  <p>Lunette menggunakan lokasi anda untuk mengira waktu Matahari dan Bulan di tempat anda berada. Lokasi itu kekal pada peranti anda. Apl ini tiada akses rangkaian, tidak mengumpul apa-apa dan tidak menghantar apa-apa.</p>
 </section>
 
 <section class="card">
   <h2>Lokasi anda</h2>
-  <p>macOS meminta kebenaran anda sebelum Lunette boleh menggunakan lokasi anda. Jika anda membenarkannya, Lunette meminta kedudukan anda daripada Perkhidmatan Lokasi apabila ia dimulakan dan kemudian setiap beberapa jam — ia tidak sekali-kali menjejaki anda secara berterusan — dan membundarkannya kepada dua tempat perpuluhan, kira-kira satu kilometer, sebelum menyimpannya. Kedudukan yang dibundarkan itu digunakan untuk satu perkara sahaja: mengira matahari terbit, matahari terbenam, senja, jam emas, bulan terbit dan bulan terbenam.</p>
-  <p>Nama bandar anda, apabila macOS dapat memberikannya, ditunjukkan dalam panel dan disimpan bersama kedudukan.</p>
-  <p>Jika anda menolak, atau mematikan Perkhidmatan Lokasi, Lunette menggunakan bandar utama zon waktu Mac anda. Fasa Bulan adalah sama di mana-mana dan tidak memerlukan lokasi langsung.</p>
+  <p>Sistem anda meminta kebenaran anda sebelum Lunette boleh menggunakan lokasi anda; pada Android, Lunette menerangkan sebabnya dahulu, kemudian hanya meminta lokasi anggaran anda. Jika anda membenarkannya, Lunette meminta kedudukan anda apabila ia dimulakan atau kembali ke skrin, dan setiap beberapa jam selagi ia berjalan — ia tidak sekali-kali menjejaki anda secara berterusan atau di latar belakang — dan membundarkannya kepada dua tempat perpuluhan, kira-kira satu kilometer, sebelum menyimpannya. Kedudukan yang dibundarkan itu digunakan untuk satu perkara sahaja: mengira matahari terbit, matahari terbenam, senja, jam emas, bulan terbit dan bulan terbenam.</p>
+  <p>Nama bandar anda, apabila sistem dapat memberikannya, ditunjukkan dalam apl. Pada Mac ia disimpan bersama kedudukan; pada iPhone, iPad dan Android ia dicari semula setiap kali dan tidak disimpan.</p>
+  <p>Jika anda menolak, atau mematikan lokasi, Lunette menggunakan bandar utama zon waktu peranti anda. Fasa Bulan adalah sama di mana-mana dan tidak memerlukan lokasi langsung.</p>
+  <p>Widget: pada Mac, widget Lunette mendapat kedudukan yang dibundarkan daripada apl melalui App Group, ruang pada Mac anda yang hanya boleh dibaca oleh Lunette dan widgetnya. Pada iPhone dan iPad, widget meminta lokasi anda daripada sistem sendiri, hanya jika anda telah membenarkan Lunette, dan membundarkannya dengan cara yang sama. Pada Android, widget membaca kedudukan yang telah disimpan oleh apl.</p>
 </section>
 
 <section class="card">
   <h2>Ke mana ia pergi</h2>
-  <p>Tidak ke mana-mana. <strong>Lunette tiada kelayakan rangkaian (network entitlement)</strong>, yang bermaksud macOS sendiri tidak membenarkannya membuka sambungan rangkaian. Tiada pelayan, tiada pustaka analitik, tiada pelapor ranap dan tiada akaun.</p>
+  <p>Tidak ke mana-mana. <strong>Lunette tiada akses rangkaian.</strong> Pada Mac ia tiada kelayakan rangkaian (network entitlement) dan pada Android ia tidak meminta kebenaran Internet, jadi sistem sendiri tidak membenarkannya membuka sambungan; apl iPhone dan iPad tidak mengandungi kod yang menggunakan rangkaian. Tiada pelayan, tiada pustaka analitik, tiada pelapor ranap dan tiada akaun.</p>
 </section>
 
 <section class="card">
   <h2>Apa yang disimpan, dan di mana</h2>
-  <p>Di dalam bekas sandbox apl itu sendiri pada Mac anda: kedudukan yang dibundarkan dan nama tempat yang diterangkan di atas, serta tetapan paparan anda. Tiada yang lain. Memadamkan apl akan membuang bekasnya dan segala isinya.</p>
+  <p>Di dalam storan apl itu sendiri pada peranti anda: kedudukan yang dibundarkan (dan nama tempat, pada Mac) yang diterangkan di atas, serta tetapan paparan anda. Tiada yang lain. Memadamkan apl akan membuang semuanya. Seperti data mana-mana apl, ia termasuk dalam sandaran peranti anda sendiri, kecuali pada Android, yang tidak menyertakan kedudukan dalam sandaran.</p>
 </section>
 
 <section class="card">
   <h2>E-mel</h2>
-  <p>Butang <em>E-mel pembangun</em> membuka mesej dalam apl mel anda sendiri dengan versi apl, versi macOS anda, jenis Mac dan cara Lunette menemui lokasi anda (contohnya "Perkhidmatan Lokasi" atau "bandar zon waktu") sudah diisi. Kedudukan anda tidak disertakan. Tiada apa-apa dihantar melainkan anda sendiri menghantar mesej itu.</p>
+  <p>Butang <em>E-mel pembangun</em> membuka mesej dalam apl mel anda sendiri dengan versi apl, versi sistem anda, jenis peranti dan cara Lunette menemui lokasi anda (contohnya "Perkhidmatan Lokasi" atau "bandar zon waktu") sudah diisi. Kedudukan anda tidak disertakan. Tiada apa-apa dihantar melainkan anda sendiri menghantar mesej itu.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Hubungi</h2>
-  <p>Soalan tentang dasar ini, atau apa-apa sahaja: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Soalan tentang dasar ini, atau apa-apa sahaja: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette untuk macOS · <a href="./">Laman utama</a> · <a href="support.html">Sokongan</a> · <a href="privacy.html">Privasi</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette untuk Mac, iPhone, iPad dan Android · <a href="./">Laman utama</a> · <a href="support.html">Sokongan</a> · <a href="privacy.html">Privasi</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

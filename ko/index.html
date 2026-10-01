@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lunette — Mac 메뉴 막대 속의 달과 해</title>
-<meta name="description" content="Lunette는 오늘 밤의 달을 macOS 메뉴 막대에 보여 줍니다. 월출, 일출, 일몰, 골든 아워, 다가오는 위상까지 함께 알려 줍니다.">
+<title>Lunette — Mac, iPhone, iPad, Android에서 만나는 달과 해</title>
+<meta name="description" content="Lunette는 오늘 밤의 달과 오늘의 해를 보여 줍니다. 월출, 일출, 일몰, 골든 아워, 다가오는 위상, 일식과 월식, 유성우, 행성까지. Mac 메뉴 막대에서, 그리고 iPhone, iPad, Android에서.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -53,7 +53,7 @@
 <div class="hero">
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
-  <p class="tagline">달과 해를 메뉴 막대에.</p>
+  <p class="tagline">달과 해를 메뉴 막대에, 그리고 주머니 속에.</p>
   <!-- family:stores -->
   <div class="family-stores">
     <a class="family-store" href="https://apps.apple.com/app/id6816035470?platform=mac"><img src="../family/badges/mac-ko.svg" alt="Mac App Store에서 다운로드" height="46"></a>
@@ -65,7 +65,7 @@
     <a href="./">홈</a>
     <a href="support.html">지원</a>
     <a href="privacy.html">개인정보 처리방침</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">지원팀에 이메일 보내기</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">지원팀에 이메일 보내기</a>
     <!-- family:nav --><a href="#more-apps">다른 앱</a>
   <details class="family-lang"><summary aria-label="언어: 한국어"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>한국어</span></summary>
     <ul>
@@ -110,26 +110,31 @@
 
 <section class="card">
   <h2>주요 기능</h2>
-  <p>Lunette는 오늘 밤의 달을 실제 위상 그대로 메뉴 막대에 그리고, 옆에 다음 일출이나 일몰 시각을 보여 줍니다. 클릭하면 그날의 하늘이 한눈에 펼쳐집니다.</p>
+  <p>Mac에서 Lunette는 오늘 밤의 달을 실제 위상 그대로 메뉴 막대에 그리고, 옆에 다음 일출이나 일몰 시각을 보여 줍니다. 클릭하면 그날의 하늘이 한눈에 펼쳐집니다. iPhone, iPad, Android에서는 같은 하늘이 앱 화면을 가득 채우고, 위젯으로 홈 화면에 달을 둘 수 있습니다.</p>
   <ul>
     <li><strong>오늘 밤 보이는 그대로의 달</strong>: 위상, 빛나는 부분의 비율, 지구와의 거리, 그리고 지금 있는 곳에서 달이 뜨고 지는 시각.</li>
     <li><strong>하루를 한눈에</strong>: 지평선 위를 지나는 해의 궤적을 그린 차트로, 하늘의 상태에 따라 밤, 박명, 블루 아워, 골든 아워, 낮으로 색이 나뉘고 그 위에 달의 경로가 점선으로 그려집니다.</li>
     <li><strong>일출, 일몰, 낮의 길이</strong>, 그리고 어제보다 얼마나 길어지거나 짧아졌는지.</li>
     <li><strong>골든 아워와 블루 아워</strong>를 아침과 저녁 모두, 사진가를 위해. 원하면 시민 박명, 항해 박명, 천문 박명도 볼 수 있습니다.</li>
     <li><strong>다음 네 가지 위상</strong>: 상현, 보름달, 하현, 삭을 분 단위까지.</li>
+    <li><strong>일식과 월식</strong>: 다음 일식과 월식, 그리고 지금 있는 곳에서 볼 수 있는지 여부.</li>
+    <li><strong>원하는 날</strong>: 날짜를 넘기거나 골라서 저녁 계획을 세우고, 한 달의 달 모양을 달력으로 볼 수 있습니다.</li>
+    <li><strong>유성우와 행성</strong>: 다음 유성우가 절정인 밤과 그날 하늘이 얼마나 어두울지, 그리고 오늘 밤 금성, 화성, 목성, 토성이 지평선 위에 있는 시간.</li>
+    <li><strong>나침반과 알림</strong>: 해와 달이 뜨고 지는 방향, 그리고 보름달, 삭, 골든 아워, 일출, 일몰, 월출, 볼 수 있는 일식·월식에 대한 알림.</li>
+    <li><strong>위젯</strong>: Mac 데스크탑, 휴대전화나 태블릿의 홈 화면, iPhone 잠금 화면에 달과 그날의 하늘을.</li>
   </ul>
-  <p class="note">macOS 14 Sonoma 이상이 필요합니다.</p>
+  <p class="note">macOS 14 Sonoma 이상, iOS 또는 iPadOS 17 이상, Android 8.0 이상이 필요합니다. 월간 달력, 유성우, 행성은 버전 1.1에서 Mac에도 추가됩니다. App Store에서 한 번 구입하면 Mac, iPhone, iPad에서 모두 쓸 수 있으며, Android 버전은 Google Play에서 받을 수 있습니다.</p>
 </section>
 
 <section class="card">
-  <h2>모든 계산은 Mac에서</h2>
-  <p>모든 수치는 천문학자들이 공개한 공식에 따라 날짜와 위치를 바탕으로 사용자의 Mac에서 계산됩니다. 날씨 서비스도, 다운로드도, 낡아 버릴 데이터도 없으며, 시각은 US Naval Observatory 역서와 1~2분 이내로 일치합니다.</p>
+  <h2>모든 계산은 기기에서</h2>
+  <p>모든 수치는 천문학자들이 공개한 공식에 따라 날짜와 위치를 바탕으로 사용자의 Mac, iPhone, iPad 또는 Android 기기에서 직접 계산됩니다. 날씨 서비스도, 다운로드도, 낡아 버릴 데이터도 없으며, 시각은 US Naval Observatory 역서와 1~2분 이내로 일치합니다.</p>
   <p>적도 남쪽에서 보면 달은 위아래가 뒤집혀 반대쪽이 빛나 보입니다. Lunette는 지금 있는 곳에서 보이는 모습 그대로 달을 그립니다.</p>
 </section>
 
 <section class="card">
   <h2>한 문단으로 보는 개인정보 보호</h2>
-  <p>Lunette는 지금 있는 곳의 일출, 일몰, 월출을 계산하기 위해서만 위치를 요청합니다. 위치는 약 1km 단위로 반올림해 Mac에만 보관하며, 어디로 보낼 네트워크 접근 권한도 없습니다. 계정도, 분석도, 추적도 없습니다. 위치를 아예 공유하고 싶지 않다면 Lunette는 대신 시간대의 대표 도시를 사용하며, 보통 몇 분 이내로 차이가 납니다. 전체 <a href="privacy.html">개인정보 처리방침</a>에 같은 내용이 더 자세히 나와 있습니다.</p>
+  <p>Lunette는 지금 있는 곳의 일출, 일몰, 월출을 계산하기 위해서만 위치를 요청합니다. 위치는 약 1km 단위로 반올림해 기기에만 보관하며, 어디로 보낼 네트워크 접근 권한도 없습니다. 계정도, 분석도, 추적도 없습니다. 위치를 아예 공유하고 싶지 않다면 Lunette는 대신 시간대의 대표 도시를 사용하며, 보통 몇 분 이내로 차이가 납니다. 전체 <a href="privacy.html">개인정보 처리방침</a>에 같은 내용이 더 자세히 나와 있습니다.</p>
 </section>
 
 <!-- family:apps -->
@@ -158,7 +163,7 @@
 </section>
 <!-- /family:apps -->
 <footer>
-<p>macOS용 Lunette · <a href="./">홈</a> · <a href="support.html">지원</a> · <a href="privacy.html">개인정보</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Mac, iPhone, iPad, Android용 Lunette · <a href="./">홈</a> · <a href="support.html">지원</a> · <a href="privacy.html">개인정보</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

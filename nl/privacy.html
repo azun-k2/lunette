@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — privacybeleid</title>
-<meta name="description" content="Lunette houdt je locatie op je Mac en heeft geen netwerktoegang. Het volledige privacybeleid.">
+<meta name="description" content="Lunette houdt je locatie op je apparaat en heeft geen netwerktoegang. Het volledige privacybeleid.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Home</a>
     <a href="support.html">Ondersteuning</a>
     <a href="privacy.html">Privacybeleid</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Mail voor hulp</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Mail voor hulp</a>
     <!-- family:nav --><a href="./#more-apps">Meer apps</a>
   <details class="family-lang"><summary aria-label="Taal: Nederlands"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Nederlands</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Deze vertaling is er voor het gemak; het <a href="../privacy.html">Engelse privacybeleid</a> is de geldende versie. Laatst bijgewerkt op 25 september 2026.</p>
+  <p class="note">Deze vertaling is er voor het gemak; het <a href="../privacy.html">Engelse privacybeleid</a> is de geldende versie. Laatst bijgewerkt op 1 oktober 2026.</p>
   <h2>De korte versie</h2>
-  <p>Lunette gebruikt je locatie om de tijden van zon en maan voor jouw plek te berekenen. De locatie blijft op je Mac. De app heeft geen netwerktoegang, verzamelt niets en verstuurt niets.</p>
+  <p>Lunette gebruikt je locatie om de tijden van zon en maan voor jouw plek te berekenen. De locatie blijft op je apparaat. De app heeft geen netwerktoegang, verzamelt niets en verstuurt niets.</p>
 </section>
 
 <section class="card">
   <h2>Je locatie</h2>
-  <p>macOS vraagt je om toestemming voordat Lunette je locatie mag gebruiken. Geef je die, dan vraagt Lunette Locatievoorzieningen om je positie bij het starten en daarna om de paar uur — het volgt je nooit doorlopend — en rondt die af op twee decimalen, ongeveer een kilometer, voordat het haar bewaart. Die afgeronde positie wordt voor één ding gebruikt: het berekenen van zonsopkomst, zonsondergang, schemering, het gouden uur, maansopkomst en maansondergang.</p>
-  <p>De naam van je woonplaats wordt, als macOS die kan geven, in het paneel getoond en samen met de positie bewaard.</p>
-  <p>Weiger je, of zet je Locatievoorzieningen uit, dan gebruikt Lunette in plaats daarvan de hoofdstad van de tijdzone van je Mac. De fase van de maan is overal gelijk en heeft helemaal geen locatie nodig.</p>
+  <p>Je systeem vraagt je om toestemming voordat Lunette je locatie mag gebruiken; op Android legt Lunette eerst uit waarom en vraagt het daarna alleen om je locatie bij benadering. Geef je toestemming, dan vraagt Lunette om je positie bij het starten of als het weer op het scherm komt, en om de paar uur zolang het draait — het volgt je nooit doorlopend of op de achtergrond — en rondt die af op twee decimalen, ongeveer een kilometer, voordat het haar bewaart. Die afgeronde positie wordt voor één ding gebruikt: het berekenen van zonsopkomst, zonsondergang, schemering, het gouden uur, maansopkomst en maansondergang.</p>
+  <p>De naam van je woonplaats wordt, als het systeem die kan geven, in de app getoond. Op de Mac wordt hij samen met de positie bewaard; op iPhone, iPad en Android wordt hij elke keer opnieuw opgezocht en niet bewaard.</p>
+  <p>Weiger je, of zet je locatie uit, dan gebruikt Lunette in plaats daarvan de hoofdstad van de tijdzone van je apparaat. De fase van de maan is overal gelijk en heeft helemaal geen locatie nodig.</p>
+  <p>Widgets: op de Mac krijgen de widgets van Lunette de afgeronde positie van de app via een App Group, een ruimte op je Mac die alleen Lunette en zijn widgets kunnen lezen. Op iPhone en iPad vragen de widgets het systeem zelf om je locatie, alleen als je Lunette toestemming hebt gegeven, en ronden die op dezelfde manier af. Op Android lezen de widgets de positie die de app heeft bewaard.</p>
 </section>
 
 <section class="card">
   <h2>Waar het heen gaat</h2>
-  <p>Nergens heen. <strong>Lunette heeft geen netwerkrecht</strong>, wat betekent dat macOS zelf de app geen netwerkverbinding laat openen. Er is geen server, geen analysebibliotheek, geen crashrapportage en geen account.</p>
+  <p>Nergens heen. <strong>Lunette heeft geen netwerktoegang.</strong> Op de Mac heeft het geen netwerkrecht en op Android vraagt het niet om de internettoestemming, zodat het systeem zelf geen verbinding toestaat; de app voor iPhone en iPad bevat geen code die het netwerk gebruikt. Er is geen server, geen analysebibliotheek, geen crashrapportage en geen account.</p>
 </section>
 
 <section class="card">
   <h2>Wat er wordt bewaard, en waar</h2>
-  <p>In de eigen sandboxcontainer van de app op je Mac: de afgeronde positie en plaatsnaam hierboven, en je weergave-instellingen. Verder niets. Verwijder je de app, dan verdwijnen de container en alles erin.</p>
+  <p>In de eigen opslag van de app op je apparaat: de afgeronde positie (en op de Mac de plaatsnaam) hierboven, en je weergave-instellingen. Verder niets. Verwijder je de app, dan verdwijnt alles. Zoals de gegevens van elke app zit het in je eigen reservekopieën van het apparaat, behalve op Android, waar de positie daarbuiten blijft.</p>
 </section>
 
 <section class="card">
   <h2>E-mail</h2>
-  <p>De knop <em>Mail de ontwikkelaar</em> opent een bericht in je eigen mailapp met de appversie, je macOS-versie, het soort Mac en hoe Lunette je locatie heeft gevonden (bijvoorbeeld 'Locatievoorzieningen' of 'stad van de tijdzone') al ingevuld. Je positie staat er niet in. Er wordt niets verstuurd tenzij je het bericht zelf verstuurt.</p>
+  <p>De knop <em>Mail de ontwikkelaar</em> opent een bericht in je eigen mailapp met de appversie, je systeemversie, het soort apparaat en hoe Lunette je locatie heeft gevonden (bijvoorbeeld 'Locatievoorzieningen' of 'stad van de tijdzone') al ingevuld. Je positie staat er niet in. Er wordt niets verstuurd tenzij je het bericht zelf verstuurt.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Contact</h2>
-  <p>Vragen over dit beleid, of over iets anders: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Vragen over dit beleid, of over iets anders: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette voor macOS · <a href="./">Home</a> · <a href="support.html">Ondersteuning</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette voor Mac, iPhone, iPad en Android · <a href="./">Home</a> · <a href="support.html">Ondersteuning</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lunette — zásady ochrany súkromia</title>
-<meta name="description" content="Lunette uchováva tvoju polohu na tvojom Macu a nemá prístup k sieti. Úplné zásady ochrany súkromia.">
+<meta name="description" content="Lunette uchováva tvoju polohu na tvojom zariadení a nemá prístup k sieti. Úplné zásady ochrany súkromia.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../icon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="../icon-180.png">
@@ -58,7 +58,7 @@
     <a href="./">Domov</a>
     <a href="support.html">Podpora</a>
     <a href="privacy.html">Zásady ochrany súkromia</a>
-    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Napísať podpore</a>
+    <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">Napísať podpore</a>
     <!-- family:nav --><a href="./#more-apps">Ďalšie aplikácie</a>
   <details class="family-lang"><summary aria-label="Jazyk: Slovenčina"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.9 2.6 15.1 0 18M12 3c-2.6 2.9-2.6 15.1 0 18"/></svg><span>Slovenčina</span></summary>
     <ul>
@@ -102,31 +102,32 @@
 </div>
 
 <section class="card">
-  <p class="note">Tento preklad slúži pre pohodlie; záväzné sú <a href="../privacy.html">anglické zásady ochrany súkromia</a>. Naposledy aktualizované 25. septembra 2026.</p>
+  <p class="note">Tento preklad slúži pre pohodlie; záväzné sú <a href="../privacy.html">anglické zásady ochrany súkromia</a>. Naposledy aktualizované 1. októbra 2026.</p>
   <h2>Stručne</h2>
-  <p>Lunette používa tvoju polohu na výpočet časov Slnka a Mesiaca tam, kde si. Poloha zostáva na tvojom Macu. Aplikácia nemá prístup k sieti, nič nezhromažďuje a nič neodosiela.</p>
+  <p>Lunette používa tvoju polohu na výpočet časov Slnka a Mesiaca tam, kde si. Poloha zostáva na tvojom zariadení. Aplikácia nemá prístup k sieti, nič nezhromažďuje a nič neodosiela.</p>
 </section>
 
 <section class="card">
   <h2>Tvoja poloha</h2>
-  <p>macOS ťa požiada o povolenie skôr, ako Lunette môže tvoju polohu použiť. Ak to povolíš, Lunette sa pri spustení a potom každých pár hodín opýta Polohových služieb na tvoju polohu — nikdy ťa nesleduje nepretržite — a pred uložením ju zaokrúhli na dve desatinné miesta, zhruba na kilometer. Táto zaokrúhlená poloha slúži jedinému účelu: výpočtu východu a západu Slnka, súmraku, zlatej hodinky a východu a západu Mesiaca.</p>
-  <p>Názov tvojej obce, ak ho macOS dokáže poskytnúť, sa zobrazí v paneli a uloží sa spolu s polohou.</p>
-  <p>Ak odmietneš alebo Polohové služby vypneš, Lunette namiesto toho použije hlavné mesto časového pásma tvojho Macu. Fáza Mesiaca je všade rovnaká a žiadnu polohu nepotrebuje.</p>
+  <p>Systém ťa požiada o povolenie skôr, ako Lunette môže tvoju polohu použiť; na Androide Lunette najprv vysvetlí, na čo ju potrebuje, a potom žiada len o približnú polohu. Ak to povolíš, Lunette sa na tvoju polohu opýta pri spustení alebo návrate na obrazovku a potom každých pár hodín, kým beží — nikdy ťa nesleduje nepretržite ani na pozadí — a pred uložením ju zaokrúhli na dve desatinné miesta, zhruba na kilometer. Táto zaokrúhlená poloha slúži jedinému účelu: výpočtu východu a západu Slnka, súmraku, zlatej hodinky a východu a západu Mesiaca.</p>
+  <p>Názov tvojej obce, ak ho systém dokáže poskytnúť, sa zobrazí v aplikácii. Na Macu sa ukladá spolu s polohou; na iPhone, iPade a Androide sa zakaždým vyhľadá znova a neukladá sa.</p>
+  <p>Ak odmietneš alebo polohu vypneš, Lunette namiesto toho použije hlavné mesto časového pásma tvojho zariadenia. Fáza Mesiaca je všade rovnaká a žiadnu polohu nepotrebuje.</p>
+  <p>Widgety: na Macu dostávajú widgety Lunette zaokrúhlenú polohu od aplikácie cez App Group, priestor na tvojom Macu, ktorý môžu čítať len Lunette a jej widgety. Na iPhone a iPade si widgety o polohu žiadajú systém samy, len ak si ju Lunette povolil, a zaokrúhľujú ju rovnako. Na Androide widgety čítajú polohu, ktorú aplikácia uložila.</p>
 </section>
 
 <section class="card">
   <h2>Kam to ide</h2>
-  <p>Nikam. <strong>Lunette nemá oprávnenie na sieť</strong>, čo znamená, že samotný macOS jej nedovolí otvoriť sieťové pripojenie. Nie je tu žiadny server, žiadna analytická knižnica, žiadne hlásenie pádov a žiadny účet.</p>
+  <p>Nikam. <strong>Lunette nemá prístup k sieti.</strong> Na Macu nemá oprávnenie na sieť a na Androide nežiada o povolenie na internet, takže jej samotný systém nedovolí otvoriť pripojenie; aplikácia pre iPhone a iPad neobsahuje žiadny kód, ktorý by sieť používal. Nie je tu žiadny server, žiadna analytická knižnica, žiadne hlásenie pádov a žiadny účet.</p>
 </section>
 
 <section class="card">
   <h2>Čo sa ukladá a kam</h2>
-  <p>Do vlastného sandboxového kontajnera aplikácie na tvojom Macu: zaokrúhlená poloha a názov miesta opísané vyššie a tvoje nastavenia zobrazenia. Nič iné. Vymazaním aplikácie sa odstráni jej kontajner aj všetko v ňom.</p>
+  <p>Vo vlastnom úložisku aplikácie na tvojom zariadení: zaokrúhlená poloha (a na Macu názov miesta) opísané vyššie a tvoje nastavenia zobrazenia. Nič iné. Vymazaním aplikácie sa odstráni všetko. Ako dáta každej aplikácie sú súčasťou tvojich vlastných záloh zariadenia, okrem Androidu, kde je poloha zo záloh vynechaná.</p>
 </section>
 
 <section class="card">
   <h2>E-mail</h2>
-  <p>Tlačidlo <em>Napísať vývojárovi</em> otvorí v tvojej vlastnej poštovej aplikácii správu, v ktorej je už vyplnená verzia aplikácie, tvoja verzia macOS, typ Macu a spôsob, akým Lunette zistila tvoju polohu (napríklad „Polohové služby“ alebo „mesto časového pásma“). Tvoja poloha v nej nie je. Nič sa neodošle, kým správu neodošleš sám.</p>
+  <p>Tlačidlo <em>Napísať vývojárovi</em> otvorí v tvojej vlastnej poštovej aplikácii správu, v ktorej je už vyplnená verzia aplikácie, verzia systému, typ zariadenia a spôsob, akým Lunette zistila tvoju polohu (napríklad „Polohové služby“ alebo „mesto časového pásma“). Tvoja poloha v nej nie je. Nič sa neodošle, kým správu neodošleš sám.</p>
 </section>
 
 <section class="card">
@@ -141,11 +142,11 @@
 
 <section class="card">
   <h2>Kontakt</h2>
-  <p>Otázky k týmto zásadám alebo k čomukoľvek inému: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
+  <p>Otázky k týmto zásadám alebo k čomukoľvek inému: <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a>.</p>
 </section>
 
 <footer>
-<p>Lunette pre macOS · <a href="./">Domov</a> · <a href="support.html">Podpora</a> · <a href="privacy.html">Súkromie</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20macOS%20version%3A%0A-%20Mac%3A%20Apple%20silicon%20or%20Intel%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
+<p>Lunette pre Mac, iPhone, iPad a Android · <a href="./">Domov</a> · <a href="support.html">Podpora</a> · <a href="privacy.html">Súkromie</a> · <a href="mailto:khangazun@gmail.com?subject=Lunette%20support&body=What%20happened%3A%0A%0A%0AWhat%20I%20expected%20instead%3A%0A%0A%0ADetails%20that%20help%3A%0A-%20Device%20%28Mac%2C%20iPhone%2C%20iPad%20or%20Android%29%3A%0A-%20System%20version%3A%0A-%20Lunette%20version%20%28Settings%2C%20About%29%3A%0A-%20Nearest%20town%20%28only%20if%20you%20want%20to%20say%29%3A%0A">khangazun@gmail.com</a></p>
 </footer>
 </main>
 </body>
