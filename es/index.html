@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 Fase lunar en vivo · Horas dorada y azul al instante</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">La Luna y el Sol, en tu barra de menús y en tu bolsillo.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="Demostración interactiva: iluminación de fases lunares y efemérides solares">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">Luna llena</div>
+        <div id="luIllum" class="lunette-illum">100% iluminada</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">Salida luna</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">Puesta luna</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">Hora dorada</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">Luna llena hoy</div>
+        <div class="lunette-item-lbl">Próxima fase</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 Luna nueva</button>
+      <button class="app-chip" data-phase="first">🌓 Cuarto creciente</button>
+      <button class="app-chip active" data-phase="full">🌕 Luna llena</button>
+      <button class="app-chip" data-phase="last">🌗 Cuarto menguante</button>
+    </div>
+    <span class="demo-hint">💡 Haz clic en una fase para ver la iluminación del terminador y las efemérides en tiempo real</span>
+  </div>
+  <p class="demo-note">Simulación visual. En la barra de menús de Mac y widgets de iOS, Lunette calcula efemérides 100% sin conexión.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "Luna llena", i: "100% iluminada", r: "18:24", s: "06:12", g: "17:15", n: "Luna llena hoy" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "Cuarto creciente", i: "50% iluminada", r: "12:15", s: "00:30", g: "17:18", n: "Luna llena en 7d" },
+    'new': { w: '0%', br: '0', t: "Luna nueva", i: "0% iluminada", r: "05:40", s: "18:10", g: "17:22", n: "Cuarto crec. en 7d" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "Cuarto menguante", i: "50% iluminada", r: "00:45", s: "12:50", g: "17:12", n: "Luna nueva en 7d" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>Vista desde el sur del ecuador, la Luna aparece del revés e iluminada por el otro lado. Lunette la dibuja tal como se ve desde donde estás.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Portales meteorológicos pesados vs Lunette</h2>
+  <p class="section-lead">La Luna y el Sol con cálculo exacto, sin anuncios molestos ni gasto de batería.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Aspecto</th>
+          <th>Webs del tiempo comunes</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Vistazo en la barra</strong></td>
+          <td>Sepultado en pestañas con anuncios interminables</td>
+          <td class="highlight-col"><strong>Icono nativo en la barra con la silueta real de la noche</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Hora dorada y crepúsculo</strong></td>
+          <td>Solo horas aproximadas de amanecer y anochecer</td>
+          <td class="highlight-col"><strong>Crepúsculos civil, náutico y astronómico más hora dorada</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Eventos astronómicos</strong></td>
+          <td>Buscar manualmente en tablas astronómicas densas</td>
+          <td class="highlight-col"><strong>Lluvias de estrellas, eclipses y conjunciones planetarias</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Precisión del cálculo</strong></td>
+          <td>Estimaciones aproximadas de ciudades vía web</td>
+          <td class="highlight-col"><strong>Efemérides astronómicas exactas en el propio dispositivo</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Privacidad y ligereza</strong></td>
+          <td>Rastreo constante de ubicación y publicidad masiva</td>
+          <td class="highlight-col"><strong>100% sin conexión, cero rastreo, apertura instantánea</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>La privacidad en un párrafo</h2>
   <p>Lunette solo te pide la ubicación para calcular el amanecer, el atardecer y la salida de la Luna donde estás. La guarda redondeada a aproximadamente un kilómetro, en tu dispositivo, y no tiene acceso a la red para enviarla a ningún sitio. No hay cuenta, ni análisis, ni rastreo. Si prefieres no compartir tu ubicación, Lunette usa en su lugar la ciudad principal de tu zona horaria, lo que normalmente solo supone unos minutos de diferencia. La <a href="privacy.html">política de privacidad</a> completa dice lo mismo con más detalle.</p>

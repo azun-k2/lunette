@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 Live-Mondphase · Goldene & Blaue Stunde auf einen Blick</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">Mond und Sonne, in Ihrer Menüleiste und in Ihrer Tasche.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="Interaktive Demo: Mondphasen-Beleuchtung und Dämmerungszeiten">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">Vollmond</div>
+        <div id="luIllum" class="lunette-illum">100% beleuchtet</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">Mondaufgang</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">Monduntergang</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">Goldene Stunde</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">Heute Vollmond</div>
+        <div class="lunette-item-lbl">Nächste Phase</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 Neumond</button>
+      <button class="app-chip" data-phase="first">🌓 Erstes Viertel</button>
+      <button class="app-chip active" data-phase="full">🌕 Vollmond</button>
+      <button class="app-chip" data-phase="last">🌗 Letztes Viertel</button>
+    </div>
+    <span class="demo-hint">💡 Klicke auf eine Mondphase, um die Terminator-Linie und astronomische Zeiten live zu sehen</span>
+  </div>
+  <p class="demo-note">Visuelle Simulation. In der Mac-Menüleiste und in iOS-Widgets berechnet Lunette Ephemeriden 100% offline.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "Vollmond", i: "100% beleuchtet", r: "18:24", s: "06:12", g: "17:15", n: "Heute Vollmond" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "Erstes Viertel", i: "50% beleuchtet", r: "12:15", s: "00:30", g: "17:18", n: "Vollmond in 7 Tagen" },
+    'new': { w: '0%', br: '0', t: "Neumond", i: "0% beleuchtet", r: "05:40", s: "18:10", g: "17:22", n: "1. Viertel in 7 Tagen" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "Letztes Viertel", i: "50% beleuchtet", r: "00:45", s: "12:50", g: "17:12", n: "Neumond in 7 Tagen" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>Südlich des Äquators steht der Mond auf dem Kopf und ist von der anderen Seite beleuchtet. Lunette zeichnet ihn so, wie Sie ihn von Ihrem Standort aus sehen.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Überladene Wetter-Websites vs. Lunette</h2>
+  <p class="section-lead">Mond und Sonne präzise berechnet – ohne Ablenkung, Werbung oder Akkuverbrauch.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Aspekt</th>
+          <th>Wetterportale & Websites</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Blick in die Menüleiste</strong></td>
+          <td>In Browsertabs versteckt oder hinter Werbebannern</td>
+          <td class="highlight-col"><strong>Natives Menüleistensymbol mit der echten Mondphase</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Dämmerung & Goldene Stunde</strong></td>
+          <td>Nur grobe Sonnenauf- und -untergangszeiten</td>
+          <td class="highlight-col"><strong>Bürgerliche, nautische, astronomische Dämmerung & Goldene Stunde</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Himmelsereignisse</strong></td>
+          <td>Mühsames Durchsuchen von Astro-Tabellen</td>
+          <td class="highlight-col"><strong>Integrierte Sternschnuppennächte, Finsternisse und Planeten</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Präzision</strong></td>
+          <td>Grobe Stadtschätzungen über langsame Cloud-APIs</td>
+          <td class="highlight-col"><strong>Hochpräzise astronomische Algorithmen direkt auf dem Gerät</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Datenschutz</strong></td>
+          <td>GPS-Tracking und riesige Werbenetzwerke</td>
+          <td class="highlight-col"><strong>100% offline, kein Tracking, sofortige Anzeige</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>Datenschutz in einem Absatz</h2>
   <p>Lunette fragt nach Ihrem Standort nur, um Sonnenaufgang, Sonnenuntergang und Mondaufgang für Ihren Ort zu berechnen. Der Standort wird auf etwa einen Kilometer gerundet auf Ihrem Gerät gespeichert, und Lunette hat keinen Netzwerkzugang, über den er irgendwohin gelangen könnte. Es gibt kein Konto, keine Analyse und kein Tracking. Wenn Sie Ihren Standort lieber gar nicht teilen möchten, verwendet Lunette stattdessen die Hauptstadt Ihrer Zeitzone; das liegt meist nur wenige Minuten daneben. Die vollständige <a href="privacy.html">Datenschutzerklärung</a> sagt dasselbe ausführlicher.</p>

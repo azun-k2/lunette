@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 מופע ירח חי · שעת הזהב ודמדומים במבט חטוף</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">הירח והשמש, בשורת התפריטים ובכיס שלך.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="عرض توضيحي تفاعلي: إضاءة أطوار القمر ومواقيت الشفق الشمسي">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">بدر مكتمل</div>
+        <div id="luIllum" class="lunette-illum">إضاءة 100%</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">شروق القمر</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">غروب القمر</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">الساعة الذهبية</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">الليلة بدر كامل</div>
+        <div class="lunette-item-lbl">الطور القادم</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 מולד הלבנה</button>
+      <button class="app-chip" data-phase="first">🌓 רבע ראשון</button>
+      <button class="app-chip active" data-phase="full">🌕 ירח מלא</button>
+      <button class="app-chip" data-phase="last">🌗 רבע אחרון</button>
+    </div>
+    <span class="demo-hint">💡 انقر فوق أي طور للقمر لرؤية محاكاة الإضاءة والمواقيت الفلكية المباشرة</span>
+  </div>
+  <p class="demo-note">محاكاة مرئية. في شريط قوائم Mac وويدجت iOS، يحسب Lunette الحركات الفلكية بدقة 100% دون إنترنت.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "بدر مكتمل", i: "إضاءة 100%", r: "18:24", s: "06:12", g: "17:15", n: "الليلة بدر كامل" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "تربيع أول", i: "إضاءة 50%", r: "12:15", s: "00:30", g: "17:18", n: "بدر خلال 7 أيام" },
+    'new': { w: '0%', br: '0', t: "محاق", i: "إضاءة 0%", r: "05:40", s: "18:10", g: "17:22", n: "تربيع أول خلال 7 أيام" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "تربيع أخير", i: "إضاءة 50%", r: "00:45", s: "12:50", g: "17:12", n: "محاق خلال 7 أيام" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>מדרום לקו המשווה הירח נראה הפוך ומואר מהצד השני. Lunette מצייר אותו כפי שהוא נראה מהמקום שבו אתה נמצא.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>تطبيقات ومواقع الطقس التقليدية مقابل Lunette</h2>
+  <p class="section-lead">القمر والشمس بحسابات فلكية نقية دقيقة، بلا إعلانات ولا استنزاف للبطارية.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>الخاصية</th>
+          <th>مواقع وتطبيقات الطقس</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>نظرة سريعة بشريط القوائم</strong></td>
+          <td>مدفون في صفحات المتصفح المزدحمة بالإعلانات</td>
+          <td class="highlight-col"><strong>أيقونة شريط القوائم ترسم الطور الحقيقي لقمر الليلة</strong></td>
+        </tr>
+        <tr>
+          <td><strong>الشفق والساعة الذهبية</strong></td>
+          <td>مواعيد الشروق والغروب السطحية فقط</td>
+          <td class="highlight-col"><strong>الشفق المدني والبحري والفلكي والساعة الذهبية</strong></td>
+        </tr>
+        <tr>
+          <td><strong>الظواهر الفلكية</strong></td>
+          <td>البحث اليدوي المعقد في جداول المراصد</td>
+          <td class="highlight-col"><strong>زخات الشهب المدمجة وخسوف وكسوف القمر ومرور الكواكب</strong></td>
+        </tr>
+        <tr>
+          <td><strong>دقة المحاكاة</strong></td>
+          <td>تقديرات تقريبية عشوائية للمدن عبر الإنترنت</td>
+          <td class="highlight-col"><strong>خوارزميات فلكية عالية الدقة مباشرة على جهازك</strong></td>
+        </tr>
+        <tr>
+          <td><strong>الخصوصية والسرعة</strong></td>
+          <td>تتبع دائم للموقع الجغرافي وبطء في التشغيل</td>
+          <td class="highlight-col"><strong>يعمل دون إنترنت بنسبة 100%، بلا تتبع وفوري</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>פרטיות בפסקה אחת</h2>
   <p>Lunette מבקש את המיקום שלך רק כדי לחשב את זריחת השמש, שקיעתה וזריחת הירח במקום שבו אתה נמצא. הוא שומר אותו מעוגל לכקילומטר, במכשיר שלך, ואין לו גישה לרשת שדרכה יוכל לשלוח אותו לשום מקום. אין חשבון, אין ניתוח נתונים ואין מעקב. אם אתה מעדיף לא לשתף את המיקום בכלל, Lunette משתמש במקומו בעיר הראשית של אזור הזמן שלך, ובדרך כלל ההפרש הוא דקות ספורות. <a href="privacy.html">מדיניות הפרטיות</a> המלאה אומרת את אותו הדבר בפירוט רב יותר.</p>

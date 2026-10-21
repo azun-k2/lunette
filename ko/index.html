@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 실시간 달의 위상 · 골든 아워와 박명을 한눈에</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">달과 해를 메뉴 막대에, 그리고 주머니 속에.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="インタラクティブデモ: 月の満ち欠けと太陽・薄明時刻の表示">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">보름달</div>
+        <div id="luIllum" class="lunette-illum">輝面比 100%</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">월출</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">월몰</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">골든 아워</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">今夜が満月</div>
+        <div class="lunette-item-lbl">다음 위상</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 삭 (신월)</button>
+      <button class="app-chip" data-phase="first">🌓 상현달</button>
+      <button class="app-chip active" data-phase="full">🌕 보름달 (만월)</button>
+      <button class="app-chip" data-phase="last">🌗 하현달</button>
+    </div>
+    <span class="demo-hint">💡 各月相チップをクリックすると明暗境界線の照らし出され方と天体時刻が連動します</span>
+  </div>
+  <p class="demo-note">画面上のシミュレーションです。MacのメニューバーやiOSウィジェットでは完全オフラインで高精度に天体計算します。</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "보름달", i: "輝面比 100%", r: "18:24", s: "06:12", g: "17:15", n: "今夜が満月" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "상현", i: "輝面比 50%", r: "12:15", s: "00:30", g: "17:18", n: "満月まであと7日" },
+    'new': { w: '0%', br: '0', t: "신월", i: "輝面比 0%", r: "05:40", s: "18:10", g: "17:22", n: "上弦まであと7日" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "하현", i: "輝面比 50%", r: "00:45", s: "12:50", g: "17:12", n: "新月まであと7日" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>적도 남쪽에서 보면 달은 위아래가 뒤집혀 반대쪽이 빛나 보입니다. Lunette는 지금 있는 곳에서 보이는 모습 그대로 달을 그립니다.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>복잡한 날씨 포털 vs Lunette</h2>
+  <p class="section-lead">広告もバッテリー消費もなく、今夜の月と太陽の位置を正確に手元へ。</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>일반 날씨 사이트</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>メニューバーの一覧性</strong></td>
+          <td>ブラウザを開き、広告だらけのページを探す必要がある</td>
+          <td class="highlight-col"><strong>今夜のリアルな月相の形がメニューバーにそのまま描画</strong></td>
+        </tr>
+        <tr>
+          <td><strong>薄明・ゴールデンアワー</strong></td>
+          <td>日の出・日の入りの大雑把な時間のみ</td>
+          <td class="highlight-col"><strong>常用・航海・天文薄明および撮影用ゴールデンアワー</strong></td>
+        </tr>
+        <tr>
+          <td><strong>天体イベント</strong></td>
+          <td>天文カレンダーを手動で検索する必要がある</td>
+          <td class="highlight-col"><strong>流星群・月食・日食・惑星の接近を統合表示</strong></td>
+        </tr>
+        <tr>
+          <td><strong>計算エンジン</strong></td>
+          <td>ネットワーク経由の大雑把な都市別概算</td>
+          <td class="highlight-col"><strong>端末上で完結する高精度な天体暦（エフェメリス）アルゴリズム</strong></td>
+        </tr>
+        <tr>
+          <td><strong>プライバシーと軽さ</strong></td>
+          <td>常時GPS追跡や広告トラッカーの読み込み</td>
+          <td class="highlight-col"><strong>完全オフライン・追跡ゼロ・瞬時に起動</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>한 문단으로 보는 개인정보 보호</h2>
   <p>Lunette는 지금 있는 곳의 일출, 일몰, 월출을 계산하기 위해서만 위치를 요청합니다. 위치는 약 1km 단위로 반올림해 기기에만 보관하며, 어디로 보낼 네트워크 접근 권한도 없습니다. 계정도, 분석도, 추적도 없습니다. 위치를 아예 공유하고 싶지 않다면 Lunette는 대신 시간대의 대표 도시를 사용하며, 보통 몇 분 이내로 차이가 납니다. 전체 <a href="privacy.html">개인정보 처리방침</a>에 같은 내용이 더 자세히 나와 있습니다.</p>

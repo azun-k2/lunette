@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 Trực quan pha mặt trăng · Giờ vàng & hoàng hôn trong tầm mắt</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">Mặt Trăng và Mặt Trời, trên thanh menu và trong túi bạn.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="Bản demo tương tác: độ chiếu sáng pha mặt trăng và thời khắc mặt trời">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">Trăng tròn (Vọng)</div>
+        <div id="luIllum" class="lunette-illum">Chiếu sáng 100%</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">Trăng mọc</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">Trăng lặn</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">Giờ vàng</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">Trăng tròn đêm nay</div>
+        <div class="lunette-item-lbl">Kỳ trăng tới</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 Trăng non</button>
+      <button class="app-chip" data-phase="first">🌓 Bán nguyệt đầu</button>
+      <button class="app-chip active" data-phase="full">🌕 Trăng tròn</button>
+      <button class="app-chip" data-phase="last">🌗 Bán nguyệt cuối</button>
+    </div>
+    <span class="demo-hint">💡 Nhấn vào từng pha trăng để xem mô phỏng bề mặt chiếu sáng và thời gian thiên văn</span>
+  </div>
+  <p class="demo-note">Mô phỏng trực quan. Trên menu bar Mac và widget iOS, Lunette tính toán vị trí thiên văn chính xác hoàn toàn ngoại tuyến.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "Trăng tròn (Vọng)", i: "Chiếu sáng 100%", r: "18:24", s: "06:12", g: "17:15", n: "Trăng tròn đêm nay" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "Bán nguyệt đầu tháng", i: "Chiếu sáng 50%", r: "12:15", s: "00:30", g: "17:18", n: "Trăng tròn sau 7 ngày" },
+    'new': { w: '0%', br: '0', t: "Trăng non (Sóc)", i: "Chiếu sáng 0%", r: "05:40", s: "18:10", g: "17:22", n: "Bán nguyệt sau 7 ngày" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "Bán nguyệt cuối tháng", i: "Chiếu sáng 50%", r: "00:45", s: "12:50", g: "17:12", n: "Trăng non sau 7 ngày" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>Nhìn từ phía nam đường xích đạo, Mặt Trăng trông lộn ngược và được chiếu sáng từ phía bên kia. Lunette vẽ nó đúng như khi nhìn từ nơi bạn đang ở.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Trang web thời tiết rườm rà so với Lunette</h2>
+  <p class="section-lead">Mặt trăng và mặt trời được tính toán chuẩn xác, không quảng cáo và không tốn pin.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Đặc tính</th>
+          <th>Cổng thông tin thời tiết</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Quan sát trên menu bar</strong></td>
+          <td>Phải mở tab trình duyệt nặng nề đầy quảng cáo</td>
+          <td class="highlight-col"><strong>Biểu tượng menu bar vẽ đúng hình dạng trăng đêm nay</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Giờ vàng & Chạng vạng</strong></td>
+          <td>Chỉ có giờ mặt trời mọc và lặn sơ sài</td>
+          <td class="highlight-col"><strong>Chi tiết chạng vạng dân sự, hàng hải, thiên văn & giờ vàng</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Sự kiện thiên văn</strong></td>
+          <td>Phải tự tra cứu lịch mưa sao băng và nhật nguyệt thực</td>
+          <td class="highlight-col"><strong>Tích hợp sẵn lịch mưa sao băng, nhật nguyệt thực & các hành tinh</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Độ chuẩn xác</strong></td>
+          <td>Ước tính thô theo thành phố qua API máy chủ</td>
+          <td class="highlight-col"><strong>Thuật toán thiên văn ephemeris chuẩn xác ngay trên thiết bị</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Quyền riêng tư</strong></td>
+          <td>Thu thập tọa độ vị trí và tải mã theo dõi</td>
+          <td class="highlight-col"><strong>Hoàn toàn ngoại tuyến, không mạng, không thu thập dữ liệu</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>Quyền riêng tư trong một đoạn</h2>
   <p>Lunette chỉ xin vị trí của bạn để tính giờ mặt trời mọc, mặt trời lặn và trăng mọc ở nơi bạn đang ở. Vị trí được làm tròn đến khoảng một cây số và lưu trên thiết bị của bạn, và Lunette không có quyền truy cập mạng để gửi nó đi đâu cả. Không tài khoản, không phân tích, không theo dõi. Nếu bạn không muốn chia sẻ vị trí, Lunette sẽ dùng thành phố chính của múi giờ của bạn, thường chỉ lệch vài phút. <a href="privacy.html">Chính sách quyền riêng tư</a> đầy đủ nói đúng điều này, chi tiết hơn.</p>

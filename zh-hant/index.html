@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 即時月相與日月羅盤 · 黃金時刻與暮色一覽即得</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">月亮與太陽，在選單列裡，也在你的口袋裡。</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="互動式示範：月相盈虧光照與日月晨昏蒙影運算">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">滿月 (望)</div>
+        <div id="luIllum" class="lunette-illum">月面照亮 100%</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">月出時間</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">月落時間</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">黃金時刻</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">今晚正值滿月</div>
+        <div class="lunette-item-lbl">下個關鍵月相</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 新月</button>
+      <button class="app-chip" data-phase="first">🌓 上弦月</button>
+      <button class="app-chip active" data-phase="full">🌕 滿月</button>
+      <button class="app-chip" data-phase="last">🌗 下弦月</button>
+    </div>
+    <span class="demo-hint">💡 點選任意月相標籤，即時觀察晨昏分割線光照渲染與精準天象數據</span>
+  </div>
+  <p class="demo-note">本頁面為互動效果模擬。在 Mac 選單列與 iOS 小工具中，Lunette 完全離線進行毫秒級天體歷算。</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "滿月 (望)", i: "月面照亮 100%", r: "18:24", s: "06:12", g: "17:15", n: "今晚正值滿月" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "上弦月", i: "月面照亮 50%", r: "12:15", s: "00:30", g: "17:18", n: "7天後滿月" },
+    'new': { w: '0%', br: '0', t: "新月 (朔)", i: "月面照亮 0%", r: "05:40", s: "18:10", g: "17:22", n: "7天後上弦月" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "下弦月", i: "月面照亮 50%", r: "00:45", s: "12:50", g: "17:12", n: "7天後新月" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>從赤道以南看，月亮是上下顛倒的，亮面也在另一側。Lunette 會依你所在之處看到的樣子來畫它。</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>臃腫天氣網頁與 Lunette 的對比</h2>
+  <p class="section-lead">精準算透日月軌跡，無任何廣告插播，絕不額外耗損電池電量。</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>維度</th>
+          <th>傳統天氣網站與應用程式</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>選單列直觀一瞥</strong></td>
+          <td>必須打開瀏覽器、在滿版廣告彈窗中費力尋找</td>
+          <td class="highlight-col"><strong>選單列原生圖示直接繪出今晚月亮的真實盈虧輪廓</strong></td>
+        </tr>
+        <tr>
+          <td><strong>暮色與黃金時刻</strong></td>
+          <td>僅提供簡單粗略的日出與日落時間</td>
+          <td class="highlight-col"><strong>細分民用、航海、天文三段晨昏蒙影與攝影黃金時刻</strong></td>
+        </tr>
+        <tr>
+          <td><strong>天象大事記</strong></td>
+          <td>需要手動搜尋專業的天文觀測年曆</td>
+          <td class="highlight-col"><strong>內建流星雨極大期、日月食、行星合相與最佳觀測時間</strong></td>
+        </tr>
+        <tr>
+          <td><strong>歷算引擎</strong></td>
+          <td>依賴網路 API 粗略估算城市均值</td>
+          <td class="highlight-col"><strong>完全在設備本機運作的高精度高階天文學星曆演算法</strong></td>
+        </tr>
+        <tr>
+          <td><strong>隱私與輕快</strong></td>
+          <td>背景常駐採集 GPS 定位軌跡並載入廣告</td>
+          <td class="highlight-col"><strong>100% 離線運算，無網路請求，零追蹤，瞬間秒開</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>一段話說清隱私</h2>
   <p>Lunette 請求你的位置，只是為了計算你所在之處的日出、日落和月出。它把位置四捨五入到大約一公里，儲存在你的裝置上，也沒有任何網路存取權限可以把它傳送出去。沒有帳號，沒有分析，沒有追蹤。如果你完全不想分享位置，Lunette 會改用你所在時區的主要城市，通常只差幾分鐘。完整的<a href="privacy.html">隱私權政策</a>有更詳細的說明，內容與此一致。</p>

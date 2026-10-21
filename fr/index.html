@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 Phase lunaire en direct · Heure dorée et bleue en un clin d'œil</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">La Lune et le Soleil, dans votre barre des menus et dans votre poche.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="Démo interactive : illumination des phases de la lune et éphémérides solaires">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">Pleine lune</div>
+        <div id="luIllum" class="lunette-illum">100% illuminée</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">Lever de lune</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">Coucher de lune</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">Heure dorée</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">Pleine lune ce soir</div>
+        <div class="lunette-item-lbl">Prochaine phase</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 Nouvelle lune</button>
+      <button class="app-chip" data-phase="first">🌓 Premier quartier</button>
+      <button class="app-chip active" data-phase="full">🌕 Pleine lune</button>
+      <button class="app-chip" data-phase="last">🌗 Dernier quartier</button>
+    </div>
+    <span class="demo-hint">💡 Cliquez sur une phase pour observer l'illumination du terminateur et les horaires célestes</span>
+  </div>
+  <p class="demo-note">Simulation visuelle. Dans la barre des menus Mac et sur iOS, Lunette calcule les positions astronomiques 100% hors ligne.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "Pleine lune", i: "100% illuminée", r: "18:24", s: "06:12", g: "17:15", n: "Pleine lune ce soir" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "Premier quartier", i: "50% illuminée", r: "12:15", s: "00:30", g: "17:18", n: "Pleine lune dans 7j" },
+    'new': { w: '0%', br: '0', t: "Nouvelle lune", i: "0% illuminée", r: "05:40", s: "18:10", g: "17:22", n: "1er quartier dans 7j" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "Dernier quartier", i: "50% illuminée", r: "00:45", s: "12:50", g: "17:12", n: "Nouvelle lune dans 7j" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>Vue depuis l’hémisphère Sud, la Lune apparaît à l’envers et éclairée de l’autre côté. Lunette la dessine telle qu’on la voit de là où vous êtes.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Applications météo encombrées vs Lunette</h2>
+  <p class="section-lead">La Lune et le Soleil calculés avec précision, sans publicité ni drain de batterie.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Critère</th>
+          <th>Sites météo génériques</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Coup d'œil dans la barre</strong></td>
+          <td>Enfouie dans un onglet de navigateur surchargé</td>
+          <td class="highlight-col"><strong>Icône native dessinée selon la vraie phase de ce soir</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Crépuscules et heure dorée</strong></td>
+          <td>Uniquement les heures basiques de lever et coucher</td>
+          <td class="highlight-col"><strong>Crépuscules civil, nautique, astronomique et heure dorée</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Événements célestes</strong></td>
+          <td>Recherches manuelles fastidieuses dans des tableaux</td>
+          <td class="highlight-col"><strong>Pluies d'étoiles filantes, éclipses et planètes intégrées</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Précision astronomique</strong></td>
+          <td>Approximations grossières via des API distantes</td>
+          <td class="highlight-col"><strong>Éphémérides astronomiques de haute précision sur l'appareil</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Vie privée</strong></td>
+          <td>Traque permanente de votre position GPS</td>
+          <td class="highlight-col"><strong>100% hors ligne, zéro suivi, lancement instantané</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>La confidentialité en un paragraphe</h2>
   <p>Lunette ne demande votre position que pour calculer le lever et le coucher du Soleil et le lever de la Lune là où vous êtes. Elle la conserve arrondie à environ un kilomètre, sur votre appareil, et n’a aucun accès au réseau pour l’envoyer où que ce soit. Pas de compte, pas d’analyse, pas de pistage. Si vous préférez ne pas partager votre position du tout, Lunette utilise à la place la grande ville de votre fuseau horaire, ce qui ne décale généralement les heures que de quelques minutes. La <a href="privacy.html">politique de confidentialité</a> complète dit la même chose plus en détail.</p>

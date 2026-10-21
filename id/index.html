@@ -52,6 +52,7 @@
 <body>
 <main>
 <div class="hero">
+  <div class="hero-pill">🌙 Fase bulan langsung · Jam emas & senja dalam sekejap</div>
   <img class="icon" src="../icon-512.png" alt="" width="112" height="112">
   <h1>Lunette</h1>
   <p class="tagline">Bulan dan Matahari, di bar menu dan di saku Anda.</p>
@@ -108,6 +109,81 @@
   </details><!-- /family:nav -->
   </nav>
 </div>
+<div class="demo-wrapper" id="demo">
+  <div class="lunette-stage" role="group" aria-label="Interactive demo: moon phase illumination and solar twilight viewer">
+    <div class="lunette-display">
+      <div class="lunette-moon-wrap">
+        <div class="lunette-moon-orb">
+          <div id="luMoonLit" class="lunette-moon-lit"></div>
+        </div>
+      </div>
+      <div class="lunette-info">
+        <div id="luPhaseTitle" class="lunette-phase-title">Full Moon</div>
+        <div id="luIllum" class="lunette-illum">100% Illuminated</div>
+      </div>
+    </div>
+    <div class="lunette-grid">
+      <div class="lunette-card-item">
+        <div id="luRise" class="lunette-item-val">18:24</div>
+        <div class="lunette-item-lbl">Bulan terbit</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luSet" class="lunette-item-val">06:12</div>
+        <div class="lunette-item-lbl">Bulan terbenam</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luGolden" class="lunette-item-val">17:15</div>
+        <div class="lunette-item-lbl">Golden Hour</div>
+      </div>
+      <div class="lunette-card-item">
+        <div id="luNext" class="lunette-item-val">Full Moon Tonight</div>
+        <div class="lunette-item-lbl">Fase berikutnya</div>
+      </div>
+    </div>
+    <div class="lunette-phases">
+      <button class="app-chip" data-phase="new">🌑 Bulan Baru</button>
+      <button class="app-chip" data-phase="first">🌓 Kuartal Pertama</button>
+      <button class="app-chip active" data-phase="full">🌕 Bulan Purnama</button>
+      <button class="app-chip" data-phase="last">🌗 Kuartal Akhir</button>
+    </div>
+    <span class="demo-hint">💡 Click any moon phase chip to see real-time terminator illumination and celestial timings</span>
+  </div>
+  <p class="demo-note">Visual simulation. In the Mac menu bar and iOS widgets, Lunette computes accurate astronomical positions 100% offline.</p>
+</div>
+<script>
+(function() {
+  var lit = document.getElementById('luMoonLit');
+  var title = document.getElementById('luPhaseTitle'), illum = document.getElementById('luIllum');
+  var rise = document.getElementById('luRise'), set = document.getElementById('luSet');
+  var golden = document.getElementById('luGolden'), next = document.getElementById('luNext');
+  var chips = document.querySelectorAll('.lunette-phases .app-chip');
+
+  var data = {
+    'full': { w: '100%', br: '50%', t: "Full Moon", i: "100% Illuminated", r: "18:24", s: "06:12", g: "17:15", n: "Full Moon Tonight" },
+    'first': { w: '50%', br: '50% 0 0 50% / 50%', t: "First Quarter", i: "50% Illuminated", r: "12:15", s: "00:30", g: "17:18", n: "Full Moon in 7d" },
+    'new': { w: '0%', br: '0', t: "New Moon", i: "0% Illuminated", r: "05:40", s: "18:10", g: "17:22", n: "First Qtr in 7d" },
+    'last': { w: '50%', br: '0 50% 50% 0 / 50%', t: "Last Quarter", i: "50% Illuminated", r: "00:45", s: "12:50", g: "17:12", n: "New Moon in 7d" }
+  };
+
+  chips.forEach(function(c) {
+    c.addEventListener('click', function() {
+      chips.forEach(function(x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      var p = c.getAttribute('data-phase');
+      var d = data[p];
+      if (!d) return;
+      lit.style.width = d.w;
+      lit.style.borderRadius = d.br;
+      title.textContent = d.t;
+      illum.textContent = d.i;
+      rise.textContent = d.r;
+      set.textContent = d.s;
+      golden.textContent = d.g;
+      next.textContent = d.n;
+    });
+  });
+})();
+</script>
 
 <!-- family:shot --><figure class="shot"><img src="../img/hero.jpg" alt="" width="1600" height="860"></figure><!-- /family:shot -->
 <section class="card">
@@ -134,6 +210,48 @@
   <p>Dilihat dari selatan khatulistiwa, Bulan tampak terbalik dan diterangi dari sisi lain. Lunette menggambarnya seperti yang terlihat dari tempat Anda berada.</p>
 </section>
 
+<section class="card comparison-card" id="comparison">
+  <h2>Clunky weather apps vs Lunette</h2>
+  <p class="section-lead">The Moon and the Sun, accurately calculated without clutter or battery drain.</p>
+  <div class="table-scroll">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Aspect</th>
+          <th>Weather & Web Portals</th>
+          <th class="highlight-col">Lunette</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Menu Bar Glance</strong></td>
+          <td>Buried inside browser tabs or heavy ad-laden pages</td>
+          <td class="highlight-col"><strong>Native menu bar icon drawn at tonight's true phase</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Twilight & Golden Hour</strong></td>
+          <td>Only generic sunrise and sunset timestamps</td>
+          <td class="highlight-col"><strong>Civil, nautical, astronomical twilight & golden hour</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Celestial Events</strong></td>
+          <td>Requires searching astronomy tables manually</td>
+          <td class="highlight-col"><strong>Integrated meteor showers, eclipses, and planet passes</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Calculation Engine</strong></td>
+          <td>Coarse city-level approximations over network APIs</td>
+          <td class="highlight-col"><strong>High-precision on-device astronomical ephemeris</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Privacy & Speed</strong></td>
+          <td>Tracks exact GPS coordinates and serves bloated ads</td>
+          <td class="highlight-col"><strong>100% offline, zero tracking, instant launch</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 <section class="card">
   <h2>Privasi dalam satu paragraf</h2>
   <p>Lunette meminta lokasi Anda hanya untuk menghitung waktu matahari terbit, terbenam, dan bulan terbit di tempat Anda berada. Lokasi itu dibulatkan hingga sekitar satu kilometer dan disimpan di perangkat Anda, dan Lunette tidak punya akses jaringan untuk mengirimkannya ke mana pun. Tidak ada akun, tidak ada analitik, dan tidak ada pelacakan. Jika Anda lebih memilih tidak membagikan lokasi sama sekali, Lunette memakai kota utama zona waktu Anda, yang biasanya hanya selisih beberapa menit. <a href="privacy.html">Kebijakan privasi</a> lengkap menyatakan hal yang sama dengan lebih rinci.</p>
